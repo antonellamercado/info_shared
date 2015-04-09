@@ -1,0 +1,16 @@
+<h1>Home</h1>
+<% if user_signed_in? %>
+   <%= form_for @post, html: {multipart: true} do |p|%>
+      <%= p.label :title %> <br>
+      <%= p.text_field :title %>
+      <hr>
+      <%= p.label :text %> <br>
+      <%= p.text_area :text %>
+      <hr>
+      <%= p.label :image%><br>
+      <%= p.file_field :image%>
+      <%= p.submit%>
+  <%end%>
+<% else %>  
+   <h2> Bienvenidos</h2>
+<% end %>
